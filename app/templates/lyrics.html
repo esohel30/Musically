@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+  <head>
+    <title> Lyric Generator </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" Type="text/css" href="../static/css/style.css">
+    <script src="../static/js/script.js"></script>
+  </head>
+
+  <body style="background-color: #121212; color: #b3b3b3;">
+
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="mb-5 text-center">
+            <h1 class="display-4" style="color: #1DB954;"> Lyric Generator </h1>
+            <p class="lead text-light">Unleash your creativity with the power of Markov Chains</p>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <div class="p-5 rounded shadow" style="background-color: #282828; color: #b3b3b3;">
+            <h2> Complete the Lyrics </h2>
+            <hr class="my-4" style="border-color: #333;">
+            <form action="/generate" method="POST">
+              <div class="mb-3">
+                <label class="form-label">First Line:</label>
+                <input type="text" class="form-control" style="background-color: #333; border-color: #333; color: #b3b3b3;" name="line">
+              </div>
+              <div class="mb-3">
+                <button type="submit" class="btn btn-success">Generate</button>
+              </div>
+            </form>
+
+            <p> {{newText|safe}} </p>
+
+            <hr class="my-4" style="border-color: #333;">
+
+            <h5> Settings: </h5>
+            <form action="/settings" method="POST">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <label class="form-label">Lines Generated:</label>
+                    <input type="number" class="form-control" style="background-color: #333; border-color: #333; color: #b3b3b3;" name="lines" value={{dLines}} min="1" max="100">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <label class="form-label">Similarity to Existing Songs:</label>
+                    <input type="number" class="form-control" style="background-color: #333; border-color: #333; color: #b3b3b3;" name="similarity" value={{dSim}} min="1" max="10">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-success">Set</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="p-5 rounded shadow" style="background-color: #282828; color: #b3b3b3;">
+            <h2> Mixer </h2>
+            <hr class="my-4" style="border-color: #333;">
+            <form action="/song1">
+              <div class="mb-3">
+                <label><span class="label"> First Song: {{input1}} </span></label><br>
+                <input list="songs" name="songs1" class="form-control" style="background-color: #333; border-color: #333; color: #b3b3b3;">
+                <datalist id="songs">
+                  {% for song in songlist %}
+                    <option name="song" value="{{song|safe}}">
+                  {% endfor %}
+                </datalist>
+              </div>
+              <div class="mb-3">
+                <button type="submit" class="btn btn-success">Select</button>
+              </div>
+            </form>
+
+            <form action="/song2">
+              <div class="mb-3">
+                <label><span class="label"> Second Song: {{input2}} </span></label><br>
+                <input list="songs" name="songs2" class="form-control" style="background-color: #333; border-color: #333; color: #b3b3b3;">
+              </div>
+              <div class="mb-3">
+                <button type="submit" class="btn btn-success">Select</button>
+              </div>
+            </form>
+
+            <div class="mb-3">
+              <a class="btn btn-success" href="/mix" role="button">Mix</a>
+            </div>
+
+            <p> {{mixText|safe}} </p>
+          </div>
+        </div>
+      </div>
+      <form method="POST">
+        <button class="p-1 mb-3 rounded-3"formaction="/home">Return Home</button>
+      </form>
+    </div>
+  </body>
+
+</html>
