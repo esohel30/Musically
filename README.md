@@ -1,4 +1,4 @@
-# Music Enthusiast Web Application
+# Musically - A Music Analysis application for song lovers!
 
 ## Introduction
 This web application, designed for music lovers, integrates various functionalities including user authentication, music data access through the Spotify API, and a unique feature for lyric generation using Markov chains.
