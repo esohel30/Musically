@@ -26,8 +26,14 @@ This web application, designed for music lovers, integrates various functionalit
 - **Flask Framework:** The application is built on Flask, offering a lightweight and flexible structure.
 - **Secure Sessions:** Manages user sessions for both security and a tailored user experience.
 
-## Security Considerations
-- The application currently uses a hardcoded secret key, which is not recommended for production environments.
+##Images of the application 
+
+<img width="1427" alt="Screen Shot 2024-01-15 at 8 01 22 PM" src="https://github.com/esohel30/Musically/assets/90656205/f60922ff-85ac-4050-b0cf-f0d169163e0f">
+<img width="1427" alt="Screen Shot 2024-01-15 at 7 58 55 PM" src="https://github.com/esohel30/Musically/assets/90656205/b73be028-42f6-4776-b5ef-cbe2f84bf1a1">
+<img width="1427" alt="Screen Shot 2024-01-15 at 7 59 51 PM" src="https://github.com/esohel30/Musically/assets/90656205/e371c478-a222-4acf-b7e8-3494bdcf2e22">
+<img width="1427" alt="Screen Shot 2024-01-15 at 8 00 30 PM" src="https://github.com/esohel30/Musically/assets/90656205/b3639b7b-81fd-4beb-86d0-65b04c08b7ed">
+<img width="1427" alt="Screen Shot 2024-01-15 at 7 58 30 PM" src="https://github.com/esohel30/Musically/assets/90656205/29ae6a49-9f1e-4e53-a8d7-bb182aceabbf">
+<img width="1427" alt="Screen Shot 2024-01-15 at 7 59 07 PM" src="https://github.com/esohel30/Musically/assets/90656205/8b2f1841-7e3a-481e-9b5c-2c1d882d8596">
 
 ## Running the Application
 - The application can be launched locally by running `python [filename].py`, and it will be hosted on `0.0.0.0` at port `5000`.
