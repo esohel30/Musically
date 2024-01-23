@@ -36,7 +36,7 @@ This web application, designed for music lovers, integrates various functionalit
 <img width="1427" alt="Screen Shot 2024-01-15 at 7 59 07 PM" src="https://github.com/esohel30/Musically/assets/90656205/8b2f1841-7e3a-481e-9b5c-2c1d882d8596">
 
 ## Running the Application
-- The application can be launched locally by running `python [filename].py`, and it will be hosted on `0.0.0.0` at port `5000`.
+- The application can be launched locally by running `python __init__.py`, and it will be hosted on [http://127.0.0.1:5000).
 
 ## Future Development
 - Implementing OAuth for secure Spotify integration.
